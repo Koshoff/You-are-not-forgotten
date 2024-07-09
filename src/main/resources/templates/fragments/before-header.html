@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="before-header" class="profile-menu">
+    <ul>
+        <li><a th:href="@{/profile.html}">Моят профил</a></li>
+        <th:block sec:authorize="isAuthenticated()">
+            <li><a href="#">Изход</a></li>
+        </th:block>
+        <th:block sec:authorize="!isAuthenticated()">
+            <li><a th:href="@{/user/signup}">Вход</a></li>
+        </th:block>
+
+    </ul>
+</div>
+</body>
+</html>

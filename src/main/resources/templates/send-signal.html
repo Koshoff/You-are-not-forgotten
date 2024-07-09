@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+  <div th:replace="~{fragments/before-header}">
+  </div>
+  <h1><a th:href="@{/index}">You are not forgotten</a></h1>
+  <nav th:replace="~{fragments/navigation}">
+  </nav>
+</header>
+<section class="form-section">
+  <img src="images/mail-142.png" alt="Your Image">
+
+  <div class="form-page active">
+    <h2 class="hading"> Подайте сигнал </h2>
+    <form th:action="@{/send-signal}" method="post" id="signalForm" th:object="${signalDTO}">
+
+      <label for="name">Име на лицето в нужда:</label><br>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="age">Възраст:</label><br>
+      <input type="number" id="age" name="age"><br>
+
+      <label for="location">Локация:</label><br>
+      <input type="text" id="location" name="location" required><br>
+
+      <label for="personInformation">Информация за човека:</label><br>
+      <input type="text" id="personInformation" name="personInformation" required><br>
+
+
+      <label>Нужди:</label><br>
+      <label for="food">Храна</label><br>
+      <input type="checkbox" id="food" name="needs[]" value="food">
+
+      <label for="shelter">Покрив</label><br>
+      <input type="checkbox" id="shelter" name="needs[]" value="shelter">
+
+      <label for="clothing">Облекло</label><br>
+      <input type="checkbox" id="clothing" name="needs[]" value="clothing">
+
+      <label for="contactInformation">Контактна информация:</label><br>
+      <input type="text" id="contactInformation" name="contactInformation" required><br>
+
+    </form>
+    <button class="submit-button">Изпрати сигнал</button>
+  </div>
+</section>
+
+<section class="partners-section">
+  <div class="partners">
+    <h2>Our Partners</h2>
+    <div class="partner-logos">
+      <img src="images/download.png" alt="Partner 1">
+      <img src="images/download.png" alt="Partner 2">
+      <img src="images/download.png" alt="Partner 3">
+      <img src="images/download.png" alt="Partner 4">
+      <img src="images/download.png" alt="Partner 5">
+      <img src="images/download.png" alt="Partner 6">
+
+
+      <!-- Добавете снимките на вашите партньори тук -->
+    </div>
+  </div>
+</section>
+</div>
+<!-- Sidebar -->
+
+
+<!-- Footer -->
+<footer th:replace="~{fragments/footer}">
+
+</footer>
+<script th:src="@{/js/next-page.js}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("signalForm");
+    const button = document.querySelector(".submit-button");
+
+
+
+    button.addEventListener("click", function(event) {
+        event.preventDefault(); // Предотвратява стандартното поведение на бутона за изпращане на форма
+
+        // Извличане на маркираните чекбоксове
+        const needs = [];
+        const checkboxes = document.querySelectorAll('input[name="needs[]"]:checked');
+        checkboxes.forEach(function(checkbox) {
+            needs.push(checkbox.value);
+        });
+
+        // Създаване на обект с данни от формата
+        const formData = {
+            name: form.querySelector("#name").value,
+            age: form.querySelector("#age").value,
+            location: form.querySelector("#location").value,
+            personInformation: form.querySelector("#personInformation").value,
+            needs: needs,
+            contactInformation: form.querySelector("#contactInformation").value
+        };
+
+        // Изпращане на данните към сървъра
+        fetch("send-signal", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.text();
+        })
+        .then(data => {
+            // Обработка на отговора от сървъра
+            console.log(data);
+
+            // Изчистване на формата
+
+        })
+        .catch(error => {
+            // Обработка на грешка
+            console.error("Error:", error);
+        });
+    });
+    form.reset();
+
+});
+</script>
+</body>
+
+</html>

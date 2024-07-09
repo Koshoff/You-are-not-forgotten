@@ -1,0 +1,26 @@
+@import url('index-css/index.css');
+@import url('footer-css/footer.css');
+@import url('partners-css/partners.css');
+@import url('send-signal-css/send-signal.css');
+@import url('help-someone-css/help-someone.css');
+@import url('login-register-css/login-register.css');
+@import url('upload-post-css/upload-post.ccs');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 'Source Code Pro', monospace; /* Променете съгласно вашите настройки */
+}
+
+
+img {
+    display:block;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/navigation-css/navigation.css}">
+</head>
+
+<body>
+<nav th:fragment="navigation">
+  <ul>
+    <li><a href="#">За нас</a></li>
+    <li><a href="#">Цели</a></li>
+    <li><a th:href="@{/help-someone}">Помогни на</a></li>
+    <li><a th:href="@{/job-search}">Търси си работа</a></li>
+    <li class="alert"><a th:href="@{/send-signal}">Подай сигнал</a></li>
+    <li class="heart"><a th:href="@{/become-volunteer}">Стани доброволец</a></li>
+    <li><a th:href="@{/upload-post}">Качи пост</a></li>
+    <li><a th:href="@{/upload-person-in-need}">Качи лице в нужда</a></li>
+  </ul>
+</nav>
+</body>
+</html>

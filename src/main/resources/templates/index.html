@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Company Website</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+
+<body>
+<header>
+  <div th:replace="~{fragments/before-header}">
+  </div>
+  <h1><a th:href="@{/index}">You are not forgotten</a></h1>
+  <nav th:replace="~{fragments/navigation}">
+  </nav>
+</header>
+
+<section class="main-section">
+  <div class="main-container">
+    <aside >
+      <h2>Събрани средства</h2>
+      <div class="fakeimg" style="height:200px;">10500лв</div>
+      <p>Общо събрани средства</p>
+      <h3>More Text</h3>
+      <p>Lorem ipsum dolor sit ame.</p>
+      <div class="fakeimg" style="height:60px;">Дари чрез Revolute</div><br>
+      <div class="fakeimg" style="height:60px;">Дари по банков път</div><br>
+      <div class="fakeimg" style="height:60px;">Дари чрез смс</div><br>
+      <div class="fakeimg" style="height:60px;">Дари чрез Изипей</div><br>
+      <div class="fakeimg" style="height:60px;">Абонамент</div><br>
+    </aside>
+    <main>
+      <article class="news-post" th:each="post : ${posts}">
+        <div class="image-container">
+          <img th:src="@{'/images/post_images/' + ${post.imageFilename}}" alt="Post Image" width="600" height="500">
+        </div>
+        <div>
+          <p>Content: <span th:text="${#strings.substring(post.content, 0, 30)} + '...'"></span></p>
+          <p>Publish Date: <span th:text="${post.publishDate}"></span></p>
+        </div>
+        <div class="read-more">
+          <a th:href="@{'/post/' + ${post.id}}">Прочети</a>
+        </div>
+      </article>
+    </main>
+  </div>
+</section>
+
+<section class="team-section">
+  <figure class="person">
+    <img th:src="@{/images/ivo_test.jpg}" alt="Ivo Koshov">
+    <figcaption class="person-info">
+      <p>Ivo Koshov</p>
+      <p>24</p>
+      <p>Tarikat</p>
+    </figcaption>
+  </figure>
+  <figure class="person">
+    <img th:src="@{/images/rado_test.jpg}" alt="Radoslav Tsakov">
+    <figcaption class="person-info">
+      <p>Radoslav Tsakov</p>
+      <p>30</p>
+      <p>Sharo baro</p>
+    </figcaption>
+  </figure>
+</section>
+
+<section class="partners-section">
+  <div class="partners">
+    <h2>Our Partners</h2>
+    <div class="partner-logos">
+      <img th:src="@{/images/download.png}" alt="Partner 1">
+      <img th:src="@{/images/download.png}" alt="Partner 2">
+      <img th:src="@{/images/download.png}" alt="Partner 3">
+      <img th:src="@{/images/download.png}" alt="Partner 4">
+      <img th:src="@{/images/download.png}" alt="Partner 5">
+      <img th:src="@{/images/download.png}" alt="Partner 6">
+
+
+      <!-- Добавете снимките на вашите партньори тук -->
+    </div>
+  </div>
+</section>
+</div>
+<!-- Sidebar -->
+
+
+<!-- Footer -->
+<footer th:replace="~{fragments/footer}">
+
+</footer>
+</body>

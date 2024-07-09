@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <div th:replace="~{fragments/before-header}">
+    </div>
+    <h1><a th:href="@{/index}">You are not forgotten</a></h1>
+    <nav th:replace="~{fragments/navigation}">
+    </nav>
+</header>
+<div class="container">
+    <div class="forms-container">
+        <div th:replace="~{fragments/register}"></div>
+        <div class="form-control signin-form">
+            <form th:action="@{/user/sign-in}" th:method="post">
+                <h2>Вход</h2>
+                <input type="text" name="email"  id="email" placeholder="E-mail" required />
+                <input type="password" name="password" id="password" placeholder="Парола" required />
+                <button>Вход</button>
+            </form>
+            <span>продължи с</span>
+            <div class="socials">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-google-plus-g"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </div>
+    <div class="intros-container">
+        <div class="intro-control signin-intro">
+            <div class="intro-control__inner">
+                <h2>Добре дошъл!</h2>
+                <p>
+                    Welcome back! We are so happy to have you here. It's great to see you again. We hope you had a safe and enjoyable time away.
+                </p>
+                <button id="signup-btn">Все още нямаш профил при нас?</button>
+            </div>
+        </div>
+        <div class="intro-control signup-intro">
+            <div class="intro-control__inner">
+                <h2>Присъедини се!</h2>
+                <p>
+                    We are so excited to have you here.If you haven't already, create an account to get access to exclusive offers, rewards, and discounts.
+                </p>
+                <button id="signin-btn">Имаш създаден профил? Вход.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/sign-in-to-sign-up.js}"></script>
+</body>
+</html>

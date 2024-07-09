@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+<header>
+    <div th:replace="~{fragments/before-header}">
+    </div>
+    <h1><a th:href="@{/index}">You are not forgotten</a></h1>
+    <nav th:replace="~{fragments/navigation}">
+    </nav>
+</header>
+<h1>Create Post</h1>
+<form id="postForm" enctype="multipart/form-data">
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="image" accept="image/*" required><br>
+
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br>
+
+
+    <button type="submit">Create Post</button>
+</form>
+<footer th:replace="~{fragments/footer}">
+
+</footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("postForm");
+
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+
+        const image = document.getElementById("image").files[0];
+        const content = document.getElementById("content").value;
+
+        const formData = new FormData();
+        formData.append("image", image);
+        formData.append("content", content);
+
+
+        // Send POST request
+        fetch("/upload-post", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to create post");
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(data); // Log response from the server
+            alert(data);
+            form.reset(); // Reset form fields
+        })
+        .catch(error => {
+            console.error("Error:", error);
+             alert("Error: " + error.message);
+        });
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+@import url('team-section-css/team-section.css');
+@import url('main-section-css/main-section.css');
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+
+aside {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background-image: linear-gradient(170deg, rgb(209, 209, 209), rgb(157, 226, 204));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  gap: 0.5em;
+}
+
+
+

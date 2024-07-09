@@ -1,0 +1,56 @@
+.people-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1em;
+  }
+
+
+.profile-card {
+    display: inline-block; /* Ensure the container only takes up the necessary width */
+    max-width: 500px;
+    background-color: #fff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.5s ease;
+
+
+}
+
+.profile-card:hover {
+    transform: scale(1.03);
+    border-color: #1abc9c;
+}
+
+.profile-details {
+  padding: 1.5em;
+}
+
+.profile-details h2 {
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.profile-details p {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+
+
+.image-container {
+  width: 100%; /* Make the image container fill the profile card */
+  height: 50%; /* Set the height of the image container */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+.people-image-container img {
+  padding:1em 1em 0em 1em;
+  width:400px;
+  height:400px; /* Make the image fill the image container */
+  object-fit: cover; /* Hide any overflowing content */
+}

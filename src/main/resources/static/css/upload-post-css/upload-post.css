@@ -1,0 +1,22 @@
+.admin-section {
+  text-align: center;
+}
+
+.drag-drop-area {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.drag-drop-text {
+  font-size: 18px;
+  color: #888;
+}
+
+#contentInput {
+  width: 80%;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}

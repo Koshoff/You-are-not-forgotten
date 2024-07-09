@@ -1,0 +1,103 @@
+.profile-menu ul li a {
+  color: white;
+}
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(170deg, rgb(52, 211, 153), rgb(5, 150, 105));
+  text-align: center;
+
+}
+
+header h1 a {
+  color: white;
+}
+
+.profile-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-menu ul {
+  display: flex;
+  list-style: none;
+  padding-right: 1em;
+  padding-top: 0.5em;
+
+}
+
+.profile-menu ul li {
+  padding: 0.5em;
+}
+
+nav {
+  margin-top:2em;
+}
+
+nav ul {
+  display: flex;
+  width: 100%;
+  background-color: #333;
+  padding: 1em 0em 1em 0em;
+  justify-content: center;
+  align-items: center;
+
+}
+
+nav ul li {
+  list-style: none;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+}
+
+
+.alert {
+  position: relative; /* Задължително задайте позиция relative на родителския елемент */
+}
+
+.alert::before {
+  content: "\0021";
+  color: red;
+  font-size: 30px;
+  position: absolute; /* Задайте позиция absolute, за да контролирате местоположението му */
+  top: -20px; /* Задайте отрицателна стойност за да го позиционирате над горния край на родителския елемент */
+  left: 130px;
+  z-index: 1;
+}
+
+.heart {
+  position: relative;
+}
+
+.heart:before {
+  content: "\2665"; /* Unicode for heart symbol */
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red; /* Change color as needed */
+  font-size: 35px;
+  font-weight: bold;
+  top: -25px; /* Задайте отрицателна стойност за да го позиционирате над горния край на родителския елемент */
+  left: 150px;
+  z-index: 1;
+}
+
+nav a {
+  padding: 1em;
+  margin: 0.3em;
+  color: white;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+
+}
+
+nav a:hover {
+  background-color: rgb(5, 150, 105);
+  border-radius: 10px;
+}
+
+nav a:focus {
+  background-color: rgb(5, 150, 105);
+  color: white;
+}

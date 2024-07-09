@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+<header>
+  <div th:replace="~{fragments/before-header}">
+  </div>
+  <h1><a th:href="@{/index}">You are not forgotten</a></h1>
+  <nav th:replace="~{fragments/navigation}">
+  </nav>
+</header>
+
+
+<section class="jobs-section">
+  <div class="job-card">
+
+    <div class="job-title">
+      <h2>Job title</h2>
+    </div>
+    <div class="comapny">
+      <div class="image-job-container">
+        <img src="images/download.png" alt="">
+      </div>
+      <div class="comapny-details">
+        <div class="comapny-name">
+          <h2>Comapny name</h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="profile-card">
+    <div class="image-container">
+      <img th:src="@{images/images2.png}" alt="Profile Picture">
+    </div>
+    <div class="profile-details">
+      <h2>Jane Smith</h2>
+      <p>Age: 25</p>
+      <p>Narkesh</p>
+      <p>Needs: Belo i krushka</p>
+    </div>
+  </div>
+  <div class="profile-card">
+    <div class="image-container">
+      <img src="images/narkomanka.png" alt="Profile Picture">
+    </div>
+
+    <div class="profile-details">
+      <h2>John Doe</h2>
+      <p>Age: 30</p>
+      <p>Location: New York</p>
+      <p>Needs: Food, Clothing, Shelter</p>
+    </div>
+  </div>
+  <div class="profile-card">
+    <div class="image-container">
+      <img src="images/izklqsqh.png" alt="Profile Picture">
+    </div>
+    <div class="profile-details">
+      <h2>Jane Smith</h2>
+      <p>Age: 25</p>
+      <p>Narkesh</p>
+      <p>Needs: Belo i krushka</p>
+    </div>
+  </div>
+</section>
+</div>
+<!-- Sidebar -->
+
+
+<!-- Footer -->
+<footer th:replace="~{fragments/footer}">
+
+</footer>
+</body>
+</body>
+</html>

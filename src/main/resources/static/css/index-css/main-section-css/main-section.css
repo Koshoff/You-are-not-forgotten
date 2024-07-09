@@ -1,0 +1,40 @@
+.news-post {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-post .image-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.news-post .image-container img {
+    height: auto;
+    display: block;
+}
+
+.news-post .post-content {
+    padding: 16px;
+    background-color: #f9f9f9;
+}
+
+.news-post .read-more {
+    padding: 16px;
+    background-color: #fff;
+    text-align: right;
+}
+
+.news-post .read-more a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-post .read-more a:hover {
+    text-decoration: underline;
+}

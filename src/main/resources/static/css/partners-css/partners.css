@@ -1,0 +1,21 @@
+.partners {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow images to wrap to the next line if needed */
+    gap: 20px; /* Add some space between images */
+  }
+
+  .partner-logos img {
+    padding: 10px; /* Add padding around images */
+    background-color: white; /* Set background color for images */
+    border-radius: 50%; /* Rounded corners for circular images */
+    max-width: 100px; /* Maximum width of images */
+    height: auto; /* Maintain aspect ratio */
+  }

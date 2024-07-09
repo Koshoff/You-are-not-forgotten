@@ -1,0 +1,25 @@
+
+.team-section {
+    display: flex; /* Display children elements in a row */
+    justify-content: center; /* Center the items horizontally */
+    gap: 20px; /* Add some space between items */
+
+}
+
+.person {
+  text-align: center; /* Center the content */
+  padding-top: 0.5em;
+}
+
+.person img {
+  width: 150px; /* Set the width of the image */
+  border-radius: 50%; /* Make the image circular */
+}
+
+.person-info {
+  margin-top: 10px; /* Add space between the image and information */
+}
+
+.person-info p {
+  margin: 5px 0; /* Add space between each paragraph */
+}
